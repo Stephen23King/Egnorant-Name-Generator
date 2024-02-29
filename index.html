@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doppio+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <h1 id="pageTitle">Egnorant Name Generator</h1>
+      <p>
+        <span class="label">Their ego name is:</span>
+        <span id="egoName"></span>
+      </p>
+      <button id="generateBtn">Generate Another</button>
+    </div>
+  </main>
+  <footer>
+    <p id="copyright">Copyright © <span id="currentYear"></span></p>
+  </footer>
+
+  <script>
+    function generateName() {
+      const adjectives = [
+  'Absurd',
+  'Begargled',
+  'Brainless',
+  'Bumfuzzled',
+  'Careless',
+  'Clabbis',
+  'Clabbithora',
+  'Complacent',
+  'Corrupt',
+  'Deathly',
+  'Demonic',
+  'Demotivated',
+  'Dirty',
+  'Dysfunctional',
+  'Egnorant',
+  'Fishy',
+  'Fleshy',
+  'Foolish',
+  'Fragile',
+  'Gluttonous',
+  'Gross',
+  'Horny',
+  'Inactive',
+  'Ineffective',
+  'Inefficient',
+  'Incredible',
+  'Knibbler',
+  'Lackadaisical',
+  'Laughable',
+  'Lax',
+  'Lazy',
+  'Leaky',
+  'Lethargic',
+  'Lickspittle',
+  'Lifeless',
+  'Limp',
+  'Little',
+  'Lost',
+  'Miniscule',
+  'Moldy',
+  'Moronic',
+  'Nasty',
+  'Negligent',
+  'Nonsensical',
+  'Pathetic',
+  'Poondangly',
+  'Pringly',
+  'Putrid',
+  'Rancid',
+  'Raw',
+  'Repulsive',
+  'Retarded',
+  'Revolting',
+  'Ridiculous',
+  'Rotten',
+  'Sad',
+  'Shitty',
+  'Silly',
+  'Slacker',
+  'Slimy',
+  'Slothful',
+  'Smelly',
+  'Soggy',
+  'Sour',
+  'Sozzled',
+  'Squidling',
+  'Squishy',
+  'Stankalang',
+  'Stanky',
+  'Stuporous',
+  'Taradiddly',
+  'Terrifying',
+  'Unmotivated',
+  'Upsetting',
+  'Wasteful',
+  'Wet'
+];
+      const nouns = [
+  'Armpit',
+  'Ass',
+  'Asshat',
+  'Bladder',
+  'Bum',
+  'Butthole',
+  'Buttocks',
+  'Clabbis',
+  'Clitoris',
+  'Cow',
+  'Deadbeat',
+  'Dickle',
+  'Donkey',
+  'Donut',
+  'Dunce',
+  'Fart',
+  'Fish',
+  'Floozey',
+  'Fool',
+  'Foot',
+  'Glutton',
+  'Gnome',
+  'Goofball',
+  'god',
+  'Herpe',
+  'Idiot',
+  'Imbecile',
+  'Jizzle',
+  'King',
+  'Laggard',
+  'Loafer',
+  'Lotus Eater',
+  'Mule',
+  'Moocher',
+  'Nitwit',
+  'Nipple',
+  'Nutsack',
+  'Penis',
+  'Pig',
+  'Poodle',
+  'Poop',
+  'Puddle',
+  'Punk',
+  'Puss',
+  'Pussy',
+  'Ragamuffin',
+  'Sandwich',
+  'Shit',
+  'Shitter',
+  'Silly',
+  'Skank',
+  'Slime',
+  'Sloth',
+  'Slug',
+  'Slut',
+  'Snake',
+  'Sperm',
+  'Sponger',
+  'Squid',
+  'Squidler',
+  'Squaggler',
+  'Squirter',
+  'STD',
+  'Swine',
+  'Testicle',
+  'Tit',
+  'Toilet Brush',
+  'Twat',
+  'Twit',
+  'Vag',
+  'Vagina',
+  'Virus',
+  'Whale',
+  'Worm',
+  'Zebra',
+  'Zombie'
+];
+      const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+      const noun = nouns[Math.floor(Math.random() * nouns.length)];
+      return `${adjective} ${noun}`;
+    }
+
+    // Update content when the button is clicked
+    document.getElementById('generateBtn').addEventListener('click', function() {
+      const egoName = generateName();
+      document.getElementById('egoName').textContent = egoName;
+    });
+
+    // Update current year in the footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
